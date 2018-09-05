@@ -1,5 +1,6 @@
   int rainY = 10;
   int randomNumber = (int) random(1000);
+  int score = 0;
 void setup(){
 size(1000, 1000);
 
@@ -18,13 +19,15 @@ randomNumber = (int) random(1000);
   rainY = 10;
 }
 if(rainY==940&&randomNumber>mouseX&&randomNumber<mouseX+100){
-randomNumber = (int) random(1000);
+checkCatch(randomNumber);
+  randomNumber = (int) random(1000);
   rainY = 10;
+
+}
 }
 void checkCatch(int x){
      if (x > mouseX && x < mouseX+100)
           score++;
-     else if (score > 0) 
+     else if (score > 0)
           score--;
      println("Your score is now: " + score); }
-}
